@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="utf-8"><title>Tesla OAuth Callback</title></head>
+<body style="font-family:sans-serif;padding:2rem;">
+  <h2>Tesla OAuth 승인 완료</h2>
+  <p>현재 주소창 URL 또는 아래 인증 코드를 복사해 봇에게 전달해 주세요:</p>
+  <pre id="out" style="background:#f4f4f4;padding:1rem;border-radius:8px;word-break:break-all;"></pre>
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.getElementById('out').textContent =
+      "URL: " + location.href + "\n\ncode: " + (params.get('code') || '(없음)');
+  </script>
+</body>
+</html>
